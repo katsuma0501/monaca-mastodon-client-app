@@ -1,0 +1,55 @@
+/*
+* Onsen Coustom Theme
+*/
+.toolbar,.tabbar{
+    background: #282c37;
+}
+.page,.page__background,.list,.list-item{
+    background-color: #313543;
+    color: #fff;
+}
+ons-input{
+    width: 100%;
+}
+.text-input{
+    color: #fff;
+    width: 100%;
+}
+.list-item{
+    border-bottom:1px solid #fff;
+    padding-left: 0;
+    width:100%;
+    word-wrap: break-word;
+}
+.list-item__center{
+    padding-left: 14px;
+}
+.list-item__center{
+    display:block;
+}
+
+/*
+* app CSS
+*/
+a{
+    color: #eee;
+}
+.display_name{
+    margin-left: 10px;
+}
+.toot_header{
+    display:block;
+}
+.media{
+    width: 90%;
+    height:auto;
+    margin 0 auto;
+}
+.myAccountWrap{
+    width: 100%;
+    text-align: center;
+}
+.myAccount_avatar{
+    width: 60px;
+    margin: 40px auto 0;
+}

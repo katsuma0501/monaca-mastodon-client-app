@@ -1,0 +1,22 @@
+<ons-page id="40_search" ng-controller="searchController">
+
+    <ons-toolbar>
+        <div class="center">
+            <ons-input id="searchq" type="search" placeholder="search"></ons-input>
+        </div>
+        <div class="right">
+            <span class="toolbar-button toolbar-button--material" ng-click="search()">
+                <i class="zmdi zmdi-search"></i>
+            </span>
+        </div>
+    </ons-toolbar>
+    
+    
+    <ons-list>
+        <ons-list-item ng-repeat="data in searchResultData track by $index">
+            <img src="{{data.account.avatar_static}}" width=30><span class="display_name">{{data.account.display_name}}</span>
+            <div ng-bind-html="data.content">}</div>
+        </ons-list-item>
+    </ons-list>
+
+</ons-page>

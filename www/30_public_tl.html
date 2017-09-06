@@ -1,0 +1,20 @@
+<ons-page id="30_public_tl" ng-controller="publicController">
+
+
+    <ons-pull-hook ng-action="publictlload($done)" var="publicloader">
+        <span ng-switch="publicloader.getCurrentState()">
+              <span ng-switch-when="initial"><ons-icon size="35px" icon="ion-arrow-down-a"></ons-icon> Pull down to refresh</span>
+        <span ng-switch-when="preaction"><ons-icon size="35px" icon="ion-arrow-up-a"></ons-icon> Release to refresh</span>
+        <span ng-switch-when="action"><ons-icon size="35px" spin="true" icon="ion-load-d"></ons-icon> Loading data...</span>
+        </span>
+    </ons-pull-hook>
+
+    <ons-list>
+        <ons-list-item ng-repeat="data in publicTimeLineData track by $index">
+            <img src="{{data.account.avatar_static}}" width=30><span class="display_name">{{data.account.display_name}}</span>
+            <div ng-bind-html="data.content"></div>
+            <div ng-bind-html="data.media_attachments|media"></div>
+        </ons-list-item>
+    </ons-list>
+
+</ons-page>

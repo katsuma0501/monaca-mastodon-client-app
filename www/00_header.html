@@ -1,0 +1,41 @@
+
+<ons-sliding-menu var="app.slidingMenu" menu-page="01_menu.html" side="left" type="overlay" max-slide-distance="200px" swipe-target-width="50px">
+
+<ons-page id="00_base" ng-controller="baseController">
+
+  <ons-toolbar>
+    <div class="left">
+        <span class="toolbar-button toolbar-button--material">
+            <i class="zmdi zmdi-menu"></i>
+        </span>
+    </div>
+    <div class="center">{{instance_name}}</div>
+    <div class="right">
+        <span class="toolbar-button toolbar-button--material" ng-click="pushpage('40_search.html')">
+            <i class="zmdi zmdi-search"></i>
+        </span>
+        <span class="toolbar-button toolbar-button--material">
+          <i class="zmdi zmdi-notifications"></i>
+        </span>
+    </div>
+  </ons-toolbar>
+
+
+  
+  <ons-tabbar position="top" id="tabbar">
+    <ons-tab page="10_home_tl.html" active="true">
+      <span>HOME</span>
+    </ons-tab>
+    <ons-tab page="20_local_tl.html">
+      <span>ローカル</span>
+    </ons-tab>
+    <ons-tab page="30_public_tl.html">
+      <span>連合</span>
+    </ons-tab>
+  </ons-tabbar>  
+
+ </ons-page>
+ 
+ </ons-sliding-menu>
+ 
+

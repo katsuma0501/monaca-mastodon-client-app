@@ -1,0 +1,20 @@
+<ons-page id="20_local_tl" ng-controller="localController">
+
+
+    <ons-pull-hook ng-action="localtlload($done)" var="localloader">
+        <span ng-switch="localloader.getCurrentState()">
+              <span ng-switch-when="initial"><ons-icon size="35px" icon="ion-arrow-down-a"></ons-icon> Pull down to refresh</span>
+        <span ng-switch-when="preaction"><ons-icon size="35px" icon="ion-arrow-up-a"></ons-icon> Release to refresh</span>
+        <span ng-switch-when="action"><ons-icon size="35px" spin="true" icon="ion-load-d"></ons-icon> Loading data...</span>
+        </span>
+    </ons-pull-hook>
+
+    <ons-list>
+        <ons-list-item ng-repeat="data in localTimeLineData track by $index">
+            <img src="{{data.account.avatar_static}}" width=30><span class="display_name">{{data.account.display_name}}</span>
+            <div class="toot_content" ng-bind-html="data.content"></div>
+            <div ng-bind-html="data.media_attachments|media"></div>
+        </ons-list-item>
+    </ons-list>
+
+</ons-page>
