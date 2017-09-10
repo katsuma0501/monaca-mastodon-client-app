@@ -1,11 +1,11 @@
 
-<ons-sliding-menu var="app.slidingMenu" menu-page="01_menu.html" side="left" type="overlay" max-slide-distance="200px" swipe-target-width="50px">
+<ons-sliding-menu var="app.slidingMenu" menu-page="01_menu.html" side="left" type="overlay" max-slide-distance="250px" swipe-target-width="50px">
 
 <ons-page id="00_base" ng-controller="baseController">
 
   <ons-toolbar>
     <div class="left">
-        <span class="toolbar-button toolbar-button--material">
+        <span class="toolbar-button toolbar-button--material" ng-click="app.slidingMenu.toggleMenu()">
             <i class="zmdi zmdi-menu"></i>
         </span>
     </div>
@@ -14,7 +14,7 @@
         <span class="toolbar-button toolbar-button--material" ng-click="pushpage('40_search.html')">
             <i class="zmdi zmdi-search"></i>
         </span>
-        <span class="toolbar-button toolbar-button--material">
+        <span class="toolbar-button toolbar-button--material" ng-click="pushpage('50_notifications.html')">
           <i class="zmdi zmdi-notifications"></i>
         </span>
     </div>

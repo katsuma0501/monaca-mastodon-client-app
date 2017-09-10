@@ -20,6 +20,5 @@ app.controller('homeController',['$scope', '$timeout', '$controller', 'DataServi
     // 通信時間を考慮して少し時間を遅らせて取得
     $timeout(function() {
         $scope.homeTimeLineData = DataService.getHomeTimeLine();
-        // alert(JSON.stringify($scope.homeTimeLineData));
     },2000);
 }]);

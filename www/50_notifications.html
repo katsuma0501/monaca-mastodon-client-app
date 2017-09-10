@@ -1,0 +1,25 @@
+<ons-page id="50_notifications" ng-controller="notificationsController">
+    
+    <ons-toolbar>
+        <div class="left">
+            <ons-back-button></ons-back-button>
+        </div>
+        <div class="center">通知</div>
+        <div class="right"></div>
+    </ons-toolbar>
+    
+    <ons-list>
+        <ons-list-item ng-repeat="data in notificationsData track by $index">
+            <img src="{{data.account.avatar_static}}" width=30><span class="display_name">{{data.account.display_name|white_check_mark}}@{{data.account.acct}}さんが</span>
+            <div ng-switch="data.type">
+                <div ng-switch-when="mention">あなたにメンションしました。</div>
+                <div ng-switch-when="reblog">あなたのトゥートをブーストしました。</div>
+                <div ng-switch-when="favourite">あなたのトゥートをお気に入りしました。</div>
+                <div ng-switch-when="follow">あなたのフォローしました。</div>
+                <div ng-switch-default></div>
+            </div>
+            <div ng-bind-html="data.status.content"></div>
+        </ons-list-item>
+    </ons-list>
+
+</ons-page>

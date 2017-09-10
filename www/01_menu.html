@@ -1,8 +1,12 @@
 <ons-page  ng-controller="baseController">
-    <div class="myAccountWrap">
-        <img class="myAccount_avatar" src="{{myAccountData.avatar_static}}">
+    <div class="myAccountWrap" style="background-image:url('{{myAccountData.header}}');">
+        <div class="myAccount_transparent">
+            <img class="myAccount_avatar" src="{{myAccountData.avatar_static}}">
+            <div class="display_name">{{myAccountData.display_name}}</div>
+            <div class="acct">@{{myAccountData.acct}}</div>
+            <div ng-bind-html="myAccountData.note"></div>
+            <div>{{myAccountData.following_count}}フォロー</div>
+            <div>{{myAccountData.followers_count}}フォロワー</div>
+        </div>
     </div>
-    
-    <div><a onclick="cordova.InAppBrowser.open('http://qiitadon.com','_system','location=no');">inappbrowser</a></div>
-
 </ons-page>

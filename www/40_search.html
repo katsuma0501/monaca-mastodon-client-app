@@ -1,8 +1,11 @@
 <ons-page id="40_search" ng-controller="searchController">
 
     <ons-toolbar>
+        <div class="left">
+            <ons-back-button></ons-back-button>
+        </div>
         <div class="center">
-            <ons-input id="searchq" type="search" placeholder="search"></ons-input>
+            <ons-input id="searchq" type="search" placeholder="search" ng-keyup="search()"></ons-input>
         </div>
         <div class="right">
             <span class="toolbar-button toolbar-button--material" ng-click="search()">
@@ -13,9 +16,15 @@
     
     
     <ons-list>
-        <ons-list-item ng-repeat="data in searchResultData track by $index">
-            <img src="{{data.account.avatar_static}}" width=30><span class="display_name">{{data.account.display_name}}</span>
-            <div ng-bind-html="data.content">}</div>
+        <ons-list-item ng-repeat="tag in searchResultData.hashtags track by $index">
+            <div><a ng-click="hashtag_search(tag)">#{{tag}}</a></div>
+        </ons-list-item>
+    </ons-list>
+    <ons-list>
+        <ons-list-item ng-repeat="data in searchResultData.accounts track by $index">
+            <img src="{{data.avatar_static}}" width=30>
+            <span class="display_name">{{data.display_name}}</span>
+            <span class="acct">@{{data.acct}}</span>
         </ons-list-item>
     </ons-list>
 

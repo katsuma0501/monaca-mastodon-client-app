@@ -1,7 +1,7 @@
 /*
 * 20_local.htmlのコントローラー
 */
-app.controller('localController',['$scope', '$timeout', '$controller', 'AppConstantService', 'DataService', function($scope, $timeout, $controller, AppConstantService, DataService){
+app.controller('localController',['$scope', '$timeout', '$controller', 'DataService', function($scope, $timeout, $controller, DataService){
     //継承
     $controller('baseController', {$scope:$scope});
         
@@ -15,16 +15,11 @@ app.controller('localController',['$scope', '$timeout', '$controller', 'AppConst
     };
     
     
-    // HOME TimeLineデータダウンロード取得
+    // ロ-カル TimeLineデータダウンロード取得
     DataService.downloadLocalTimeLine();
     
     // 通信時間を考慮して少し時間を遅らせて取得
-    // var getHomeTimeLine = function(){
-    //     $scope.homeTimeLineData = DataService.getHomeTimeLine();
-    //     // $scope.$apply(homeTimeLineData);
-    // }
-        $timeout(function() {
-            $scope.localTimeLineData = DataService.getLocalTimeLine();
-            // alert(JSON.stringify($scope.homeTimeLineData));
-        },2000);
+    $timeout(function() {
+        $scope.localTimeLineData = DataService.getLocalTimeLine();
+    },2000);
 }]);

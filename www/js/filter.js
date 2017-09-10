@@ -15,7 +15,12 @@ app.filter('white_check_mark', [function() {
 app.filter('media', [function() {
     return function (media_attachments) {
         if( media_attachments.length != 0 ){
-            return '<img src="'+media_attachments[0]['remote_url']+'" class="media">';
+            if( media_attachments[0]['url'] != "" ){
+                return '<img src="'+media_attachments[0]['url']+'" class="media">';
+            }
+            if( media_attachments[0]['remote_url'] != "" ){
+                return '<img src="'+media_attachments[0]['remote_url']+'" class="media">';
+            }
         }
     };
   }

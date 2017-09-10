@@ -1,7 +1,7 @@
 /*
 * 30_public.htmlのコントローラー
 */
-app.controller('publicController',['$scope', '$timeout', '$controller', 'AppConstantService', 'DataService', function($scope, $timeout, $controller, AppConstantService, DataService){
+app.controller('publicController',['$scope', '$timeout', '$controller', 'DataService', function($scope, $timeout, $controller,  DataService){
     //継承
     $controller('baseController', {$scope:$scope});
     
@@ -13,16 +13,11 @@ app.controller('publicController',['$scope', '$timeout', '$controller', 'AppCons
       }, 1000);
     };
     
-    // HOME TimeLineデータダウンロード取得
+    // 連合 TimeLineデータダウンロード取得
     DataService.downloadPublicTimeLine();
     
     // 通信時間を考慮して少し時間を遅らせて取得
-    // var getHomeTimeLine = function(){
-    //     $scope.homeTimeLineData = DataService.getHomeTimeLine();
-    //     // $scope.$apply(homeTimeLineData);
-    // }
-        $timeout(function() {
-            $scope.publicTimeLineData = DataService.getPublicTimeLine();
-            // alert(JSON.stringify($scope.homeTimeLineData));
-        },2000);
+    $timeout(function() {
+        $scope.publicTimeLineData = DataService.getPublicTimeLine();
+    },2000);
 }]);
